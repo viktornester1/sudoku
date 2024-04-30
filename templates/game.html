@@ -18,13 +18,15 @@
   </table>
 </div>
 <div id="game-controls">
-  <button id="new-game-btn" class="btn btn-primary">New Game</button>
-  <select id="difficulty-level" class="form-select">
-    <option value="easy" {% if difficulty == 'easy' %}selected{% endif %}>Easy</option>
-    <option value="medium" {% if difficulty == 'medium' %}selected{% endif %}>Medium</option>
-    <option value="hard" {% if difficulty == 'hard' %}selected{% endif %}>Hard</option>
-  </select>
-  <button id="submit-game-btn" class="btn btn-success">Submit</button>
+  <button id="new-game-btn" class="game-btn">New Game</button>
+  <div class="difficulty-selector">
+    <select id="difficulty-level" class="game-btn">
+      <option value="easy" {% if difficulty == 'easy' %}selected{% endif %}>Easy</option>
+      <option value="medium" {% if difficulty == 'medium' %}selected{% endif %}>Medium</option>
+      <option value="hard" {% if difficulty == 'hard' %}selected{% endif %}>Hard</option>
+    </select>
+  </div>
+  <button id="submit-game-btn" class="game-btn submit-btn">Submit</button>
 </div>
 <script>
   const board = {{ board|tojson }};

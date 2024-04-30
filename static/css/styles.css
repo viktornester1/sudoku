@@ -136,3 +136,67 @@ input[type="text"]:focus {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
+
+.game-btn {
+  display: inline-block;
+  padding: 11px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #000;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.game-btn:hover {
+  background-color: #555;
+}
+
+.submit-btn {
+  background-color: #28a745;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+.difficulty-selector {
+  display: inline-block;
+  position: relative;
+
+}
+
+.difficulty-selector select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #857d7d;
+  padding: 11px 47px 11px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  text-align-last: center;
+  border: 2px solid #000000; /* Add this line */
+  border-radius: 5px; /* Add this line */
+}
+
+.difficulty-selector option {
+  text-align: left;
+  background-color: #424236;
+  color: #fff;
+}
+
+.difficulty-selector::after {
+  content: "\25BC";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #fff;
+  pointer-events: none;
+}
