@@ -1,51 +1,53 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Your Statistics</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Difficulty</th>
-      <th>Games Played</th>
-      <th>Games Completed</th>
-      <th>Average Time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Easy</td>
-      <td>{{ stats.easy.games_played }}</td>
-      <td>{{ stats.easy.games_completed }}</td>
-      <td>
-        {% if stats.easy.games_completed > 0 %}
-        {{ '%0.2f'|format((stats.easy.total_time / stats.easy.games_completed)) }} seconds
-        {% else %}
-        N/A
-        {% endif %}
-      </td>
-    </tr>
-    <tr>
-      <td>Medium</td>
-      <td>{{ stats.medium.games_played }}</td>
-      <td>{{ stats.medium.games_completed }}</td>
-      <td>
-        {% if stats.medium.games_completed > 0 %}
-        {{ '%0.2f'|format((stats.medium.total_time / stats.medium.games_completed)) }} seconds
-        {% else %}
-        N/A
-        {% endif %}
-      </td>
-    </tr>
-    <tr>
-      <td>Hard</td>
-      <td>{{ stats.hard.games_played }}</td>
-      <td>{{ stats.hard.games_completed }}</td>
-      <td>
-        {% if stats.hard.games_completed > 0 %}
-        {{ '%0.2f'|format((stats.hard.total_time / stats.hard.games_completed)) }} seconds
-        {% else %}
-        N/A
-        {% endif %}
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <h1>Your Statistics</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Difficulty</th>
+        <th>Games Played</th>
+        <th>Games Completed</th>
+        <th>Average Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Easy</td>
+        <td>{{ stats.easy.games_played }}</td>
+        <td>{{ stats.easy.games_completed }}</td>
+        <td>
+          {% if stats.easy.games_completed > 0 %}
+          {{ '%0.2f'|format((stats.easy.total_time / stats.easy.games_completed)) }} seconds
+          {% else %}
+          N/A
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td>Medium</td>
+        <td>{{ stats.medium.games_played }}</td>
+        <td>{{ stats.medium.games_completed }}</td>
+        <td>
+          {% if stats.medium.games_completed > 0 %}
+          {{ '%0.2f'|format((stats.medium.total_time / stats.medium.games_completed)) }} seconds
+          {% else %}
+          N/A
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td>Hard</td>
+        <td>{{ stats.hard.games_played }}</td>
+        <td>{{ stats.hard.games_completed }}</td>
+        <td>
+          {% if stats.hard.games_completed > 0 %}
+          {{ '%0.2f'|format((stats.hard.total_time / stats.hard.games_completed)) }} seconds
+          {% else %}
+          N/A
+          {% endif %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 {% endblock %}

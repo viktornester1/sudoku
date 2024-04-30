@@ -5,7 +5,6 @@ body {
   margin: 0;
 }
 
-
 .logo-text {
   margin-left: 10px;
 }
@@ -36,13 +35,51 @@ main {
   padding: 20px;
 }
 
+
+
+/* CSS for the Sudoku game table */
+table.sudoku-table {
+  border-collapse: collapse; /* Collapse borders to ensure consistent appearance */
+  margin: 0 auto;
+}
+
+table.sudoku-table td {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc; /* Add default border for all cells */
+}
+
+table.sudoku-table td:first-child,
+table.sudoku-table td:nth-child(2) {
+  border-left: none;
+}
+
+table.sudoku-table tr:nth-child(3n+1) td {
+  border-top: 2px solid #333;
+}
+
+table.sudoku-table tr:nth-child(3n+3) td {
+  border-bottom: 2px solid #333;
+}
+
+table.sudoku-table td:nth-child(3n+1) {
+  border-left: 2px solid #333;
+}
+
+table.sudoku-table td:nth-child(3n+3) {
+  border-right: 2px solid #333;
+}
+
+/* Original CSS for other tables (like stats table) */
 table {
   border-collapse: separate;
   border-spacing: 5px;
   margin: 0 auto;
 }
 
-td {
+table td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
@@ -50,9 +87,6 @@ td {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-td.box-border {
-  border: 2px solid #333;
-}
 
 input[type="text"] {
   width: 30px;
@@ -128,13 +162,46 @@ input[type="text"]:focus {
   border-radius: 5px;
 }
 
+/* Stats page styles */
 .container {
-  max-width: 500px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+}
+
+.container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.container th,
+.container td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.container th {
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+.container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.container tr:hover {
+  background-color: #e6e6e6;
 }
 
 .game-btn {
@@ -181,8 +248,8 @@ input[type="text"]:focus {
   color: #fff;
   cursor: pointer;
   text-align-last: center;
-  border: 2px solid #000000; /* Add this line */
-  border-radius: 5px; /* Add this line */
+  border: 2px solid #000000;
+  border-radius: 5px;
 }
 
 .difficulty-selector option {

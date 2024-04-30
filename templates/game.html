@@ -1,7 +1,8 @@
-{% extends 'base.html' %} {% block content %}
-<h1>Sudoku Game</h1>
+{% extends 'base.html' %}
+{% block content %}
+<h1></h1>
 <div id="game-container">
-  <table>
+  <table class="sudoku-table">
     {% for row in board %}
     <tr>
       {% for cell in row %}
