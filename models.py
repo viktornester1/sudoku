@@ -19,3 +19,4 @@ class Game(db.Model):
     completed = db.Column(db.Boolean, nullable=False, default=False)
     board = db.Column(db.Text, nullable=False)
     puzzle = db.Column(db.Text, nullable=False)
+    solution = db.Column(db.Text, nullable=False)  # Add this line

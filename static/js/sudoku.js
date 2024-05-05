@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Error:', error);
     });
   }
-
   function submitGame() {
     const timeElapsed = new Date().getTime() - startTime;
     const completed = JSON.stringify(boardState) === JSON.stringify(solution);
@@ -47,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
       difficulty: difficultyLevel.value,
       board: boardState.flat().join(','), // Convert boardState to a comma-separated string
       time_taken: timeElapsed / 1000,
-      completed: completed
+      completed: completed,
+      solution: solution  // Include the solution
     };
 
     fetch('/game', {
