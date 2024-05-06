@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
   function newGame() {
     startTime = new Date().getTime();
 
-    // Fetch the new board and solution based on the selected difficulty
     fetch(`/game?difficulty=${difficultyLevel.value}`, {
       headers: {
         'Accept': 'application/json'
@@ -44,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const formData = {
       difficulty: difficultyLevel.value,
-      board: boardState.flat().join(','), // Convert boardState to a comma-separated string
+      board: boardState.flat().join(','),
       time_taken: timeElapsed / 1000,
       completed: completed,
-      solution: solution  // Include the solution
+      solution: solution
     };
 
     fetch('/game', {
@@ -70,15 +69,12 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Add event listeners
   newGameButton.addEventListener('click', newGame);
   difficultyLevel.addEventListener('change', newGame);
   submitButton.addEventListener('click', submitGame);
 
-  // Initialize the game
   newGame();
 
-  // Handle user input
   gameContainer.addEventListener('input', (event) => {
     const cell = event.target;
     const row = cell.parentNode.parentNode.rowIndex;

@@ -9,7 +9,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sudoku.db'
 db.init_app(app)
 
 
-# Routes for different pages
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -48,7 +47,6 @@ def game():
         return redirect(url_for('login'))
 
     if request.method == 'POST':
-        # Handle game submission
         data = request.get_json()
         difficulty_level = data.get('difficulty', 'easy')
         board_str = data.get('board', '')
@@ -58,7 +56,7 @@ def game():
             submitted_board = []
         time_taken = int(data.get('time_taken', '0'))
         completed = data.get('completed', False)
-        solution_board = data.get('solution', [])  # Get the solution board from the request
+        solution_board = data.get('solution', [])
 
         user_id = session['user_id']
         difficulty = 1 if difficulty_level == 'easy' else 2 if difficulty_level == 'medium' else 3
@@ -70,15 +68,10 @@ def game():
     difficulty_level = request.args.get('difficulty', 'easy')
     board, solution = sudoku_generator.generate_sudoku(difficulty_level)
 
-    # Print the solution board
     print("Solution Board:")
     for row in solution:
         print(row)
-    print()
 
-    print(board)
-
-    # Check if the request is for JSON data
     if request.headers.get('Accept') == 'application/json':
         return jsonify({'board': board, 'solution': solution})
 
